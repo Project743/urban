@@ -1,18 +1,18 @@
 number = int(input('Введите заданое число (от 3 до 20): '))
 
 
-def get_result(numder):
+def get_result(num):
     result = ''
-    for i in range(1, number):
-        for j in range(i + 1, number):
-            if (i + j) > number:
+    for i in range(1, num):
+        for j in range(i + 1, num):
+            if (i + j) > num:
                 break
-            if number % (i + j) == 0:
+            if num % (i + j) == 0:
                 result += str(i) + str(j)
     return result
 
 
-if number >= 3 and number <= 20:
+if 3 <= number <= 20:
     print(get_result(number))
 else:
     print('Число выходит за указанные границы!')
