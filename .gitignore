@@ -1,4 +1,4 @@
-.idea
+.idea/
 test.py
-output
-__pycache__
+output/
+__pycache__/
