@@ -6,4 +6,4 @@ def test_function():
 
 
 test_function()
-# inner_function() данная функция определена внутри функции test_function и не может быть извана из вне
+# inner_function() данная функция определена внутри функции test_function и не может быть вызвана из вне
