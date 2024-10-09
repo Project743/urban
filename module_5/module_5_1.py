@@ -1,14 +1,14 @@
 class House:
-    def __init__(self, name, number_of_floor):
+    def __init__(self, name, number_of_floors):
         self.name = name
-        self.number_of_floor = number_of_floor
+        self.number_of_floors = number_of_floors
 
-    def go_to(self, new_floor):
-        if new_floor not in range(1, self.number_of_floor + 1):
+    def go_to(self, new_floors):
+        if new_floors not in range(1, self.number_of_floors + 1):
             print('Такого этажа не сушествует.')
         else:
             count = 1
-            while new_floor >= count:
+            while new_floors >= count:
                 print(f'Вы поднялись на {count} этаж')
                 count += 1
 
