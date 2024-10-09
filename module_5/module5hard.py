@@ -27,9 +27,6 @@ class Video:
         self.time_now = 0
         self.adult_mode = adult_mode
 
-    def __eq__(self, other):
-        return self.title == other.title
-
 
 class UrTube:
     """
