@@ -3,7 +3,7 @@ class House:
         self.name = name
         self.number_of_floors = number_of_floors
 
-    def go_to(self, new_floor):
+    def go_to(self, new_floors):
         if new_floors not in range(1, self.number_of_floors + 1):
             print('Такого этажа не сушествует.')
         else:
