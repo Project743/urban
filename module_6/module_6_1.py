@@ -7,7 +7,6 @@ class Plant:
     edible = False
 
 
-
 class Mammal(Animal):
     def __init__(self, name):
         self.name = name
@@ -19,6 +18,7 @@ class Mammal(Animal):
         else:
             print(f'{self.name}не стал есть{food.name}')
             self.alive = False
+
 
 class Predator(Animal):
     def __init__(self, name):
@@ -37,12 +37,12 @@ class Flower(Plant):
     def __init__(self, name):
         self.name = name
 
+
 class Fruit(Plant):
     def __init__(self, name):
         self.name = name
+
     edible = True
-
-
 
 
 if __name__ == '__main__':
