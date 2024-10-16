@@ -58,7 +58,9 @@ class Triangle(Figure):
 
     def __init__(self, color, *sides):
         if (len(sides) != self.side_count
-                or sides[0] + sides[1] < sides[2] or sides[1] + sides[2] < sides[0] or sides[0] + sides[2] < sides[1]):
+                or sides[0] + sides[1] < sides[2]
+                or sides[1] + sides[2] < sides[0]
+                or sides[0] + sides[2] < sides[1]):
             sides = [1] * self.side_count
         super().__init__(color, *sides)
 
