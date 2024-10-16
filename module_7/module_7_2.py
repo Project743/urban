@@ -4,7 +4,7 @@ def custom_write(file_name, strings):
     file = open(file_name, 'w', encoding='utf-8')
     for string in strings:
         n_str += 1
-        striping_positions[(n_str,file.tell())] = string
+        striping_positions[(n_str, file.tell())] = string
 
         file.write(f'{string}\n')
     file.close()
@@ -20,4 +20,4 @@ info = [
 
 result = custom_write('test.txt', info)
 for elem in result.items():
-  print(elem)
+    print(elem)
