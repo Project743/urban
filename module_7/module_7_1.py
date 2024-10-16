@@ -1,5 +1,5 @@
 class Product:
-    def __init__(self, name, weight,category):
+    def __init__(self, name, weight, category):
         self.name = name
         self.weight = weight
         self.category = category
@@ -11,7 +11,7 @@ class Product:
 class Shop:
     def __init__(self):
         self.__file_name = 'products.txt'
-        open(self.__file_name, 'a').close() #создаем пустой файл если его еще нет
+        open(self.__file_name, 'a').close()  # создаем пустой файл если его еще нет
 
     def get_products(self):
         file = open(self.__file_name, 'r')
@@ -19,25 +19,17 @@ class Shop:
         file.close()
         return prod_str
 
-
     def add(self, *products):
         for prod in products:
             if prod.name in self.get_products():
                 print(f'Продукт {prod.name} уже есть в магазине')
             else:
                 file = open(self.__file_name, 'a')
-                file.write(f'{prod.__str__() }\n')
+                file.write(f'{prod.__str__()}\n')
                 file.close()
-        """
-        принимает неограниченное количество объектов класса Product.
-         Добавляет в файл __file_name каждый продукт из products,
-         если его ещё нет в файле (по названию). Если такой продукт уже есть,
-        то не добавляет и выводит строку 'Продукт <название> уже есть в магазине' .
-        :param products:
-        :return:
-        """
 
-if __name__ =='__main__':
+
+if __name__ == '__main__':
     s1 = Shop()
     p1 = Product('Potato', 50.5, 'Vegetables')
     p2 = Product('Spaghetti', 3.4, 'Groceries')
