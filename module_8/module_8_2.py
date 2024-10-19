@@ -1,6 +1,3 @@
-from module_3.module_3_5 import result
-
-
 def personal_sum(numbers):
     result = 0
     incorrect_data = 0
