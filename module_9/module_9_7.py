@@ -1,5 +1,5 @@
 def is_prime(func):
-    def wraper(*args):
+    def wrapper(*args):
         res = func(*args)
         bool_1 = [x for x in range(2, int(res ** 0.5) + 1) if res % x == 0]
         if bool_1:
@@ -9,7 +9,7 @@ def is_prime(func):
 
         return res
 
-    return wraper
+    return wrapper
 
 
 @is_prime
