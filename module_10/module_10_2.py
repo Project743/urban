@@ -4,7 +4,6 @@ from time import sleep
 
 class Knight(Thread):
     def __init__(self, name, power):
-        # self.name_k = name
         self.power = power
         self.enemy = 100
         super().__init__(name=name)
