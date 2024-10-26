@@ -4,9 +4,11 @@ from time import sleep
 
 class Knight(Thread):
     def __init__(self, name, power):
+        super().__init__()
         self.power = power
         self.enemy = 100
-        super().__init__(name=name)
+        self.name = name
+
 
     def run(self):
         count_day = 0
