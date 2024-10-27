@@ -2,7 +2,6 @@ from datetime import datetime
 import multiprocessing
 
 
-
 def read_info(name):
     all_data = []
     with open(name, 'r') as file:
@@ -24,4 +23,4 @@ if __name__ == '__main__':
     with multiprocessing.Pool(len(filenames)) as p:
         p.map(read_info, filenames)
     end1_time = datetime.now()
-    print(f'{end1_time - start1_time}(ногопроцесный)')
+    print(f'{end1_time - start1_time}(многопроцесный)')
