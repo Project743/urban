@@ -4,8 +4,8 @@ import multiprocessing
 
 def read_info(name):
     all_data = []
-    with open(name, 'r') as file:
-        for line in file:
+    with open(name, 'r') as f:
+        for line in f:
             all_data.append(line)
 
 
