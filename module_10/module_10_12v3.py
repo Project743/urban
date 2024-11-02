@@ -28,7 +28,7 @@ class VolatilityCalc(multiprocessing.Process):
                         self.max_price, self.min_price = price, price
         average_price = (self.max_price + self.min_price) / 2
         self.volatility = (self.max_price - self.min_price) / average_price * 100
-        self.queue.put(self.volatility)
+        return self.queue.put(self.volatility)
 
 
 
@@ -65,7 +65,7 @@ def main():
 
 
 if __name__ == '__main__':
-    count = 100
+    count = 1
     start_time = datetime.now()
     for _ in range(count):
         main()

@@ -26,7 +26,7 @@ class VolatilityCalc:
                         self.max_price, self.min_price = price, price
         average_price = (self.max_price + self.min_price) / 2
         self.volatility = (self.max_price - self.min_price) / average_price * 100
-
+        return self.volatility
 
 
 def main():
@@ -35,11 +35,11 @@ def main():
     files = [file for file in os.listdir(directory)]
     for file in files:
         vol = VolatilityCalc(file)
-        vol.run()
-        if vol.volatility == 0.0:
+        volatility = vol.run()
+        if volatility == 0.0:
             zero_volatility.append(file)
         else:
-            dict_volatility[file] = vol.volatility
+            dict_volatility[file] = volatility
     print('max volatility:')
     for _ in range(3):
         max_ = max(dict_volatility, key=dict_volatility.get)
@@ -55,7 +55,7 @@ def main():
 
 
 if __name__ == '__main__':
-    count = 100
+    count = 1
     start_time =datetime.now()
     for _ in range(count):
         main()
