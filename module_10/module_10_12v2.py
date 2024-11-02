@@ -2,10 +2,9 @@ import os
 from datetime import datetime
 from threading import Thread
 
-
 directory = '../trades'
-
-
+zero_volatility = []
+dict_volatility = {}
 
 
 class VolatilityCalc(Thread):
@@ -29,22 +28,19 @@ class VolatilityCalc(Thread):
                         self.max_price, self.min_price = price, price
         average_price = (self.max_price + self.min_price) / 2
         self.volatility = (self.max_price - self.min_price) / average_price * 100
-        return self.volatility
+        if self.volatility == 0.0:
+            zero_volatility.append(self.file)
+        else:
+            dict_volatility[self.file] = self.volatility
 
 
 def main():
-    zero_volatility = []
-    dict_volatility = {}
     files = [file for file in os.listdir(directory)]
     threads = []
     for file in files:
         thread = VolatilityCalc(file)
         thread.start()
         threads.append(thread)
-        if thread.volatility == 0.0:
-            zero_volatility.append(file)
-        else:
-            dict_volatility[file] = thread.volatility
 
     for thread in threads:
         thread.join()
@@ -64,9 +60,8 @@ def main():
 
 if __name__ == '__main__':
     count = 1
-    start_time =datetime.now()
+    start_time = datetime.now()
     for _ in range(count):
         main()
     end_time = datetime.now()
-    print((end_time-start_time)/count)
-#0:00:01.319096
+    print((end_time - start_time) / count)
