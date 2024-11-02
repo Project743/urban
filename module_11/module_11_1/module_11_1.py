@@ -1,9 +1,9 @@
 import requests
 from PIL import Image
-
+# получение погоды с openweathermap
 URL = 'https://openweathermap.org/'
 URL_API = 'https://api.openweathermap.org/data/2.5/weather'
-name = 'москва'  # название города в кавычках
+name = 'London'  # название города 
 
 params = {'q': name, 'appid': '5796abbde9106b7da4febfae8c44c232', 'units': 'metric',
           'lang': 'zh_cn'}
