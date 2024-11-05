@@ -17,27 +17,27 @@ class TournamentTest(unittest.TestCase):
             print(cls.all_results[i])
 
 
-    def test_1vs3(self):
+    def test_turnament_1vs3(self):
         turnament = module_12_2.Tournament(90, self.runner_1, self.runner_3)
         res = turnament.start()
         self.all_results['1vs3'] = {x:str(v) for x,v in res.items()}
         self.assertTrue(res[max(res.keys())] == 'Ник')
 
 
-    def test_2vs3(self):
+    def test_turnament_2vs3(self):
         turnament = module_12_2.Tournament(90, self.runner_2, self.runner_3)
         res = turnament.start()
         self.all_results['2vs3'] = {x: str(v) for x, v in res.items()}
         self.assertTrue(res[max(res.keys())] == 'Ник')
 
-    def test_2vs1vs3(self):
+    def test_turnament_2vs1vs3(self):
         turnament = module_12_2.Tournament(90, self.runner_1, self.runner_2, self.runner_3)
         res = turnament.start()
         self.all_results['2vs1vs3'] = {x: str(v) for x, v in res.items()}
         self.assertTrue(res[max(res.keys())] == 'Ник')
 
 
-    def test_valid_res(self):
+    def test_turnament_valid_vin(self):
         turnament = module_12_2.Tournament(90, self.runner_2, self.runner_3, self.runner_1)
         res = turnament.start()
         self.assertTrue(res[min(res.keys())] == 'Усэйн')
